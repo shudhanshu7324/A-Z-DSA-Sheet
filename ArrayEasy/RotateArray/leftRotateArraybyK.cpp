@@ -3,6 +3,7 @@ using namespace std;
 
 void leftRotatebyK(int arr[],int n,int k){
     int temp[n];
+    k=k%n;
 
     for(int i=0;i<n;i++){
         temp[(k+i)%n] = arr[i];
