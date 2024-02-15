@@ -10,14 +10,14 @@ int longestSubArray(int arr[], int n, int key)
         for (int j = 0; j < n; j++)
         {
             int sum = 0;
-            for (int k = i; k < j; k++)
+            for (int k = i; k <= j; k++)
             {
                 sum += arr[k];
-                if (sum == key)
-                {
-                    length = max(length, j - i + 1);
-                }
             }
+            if (sum == key)
+                {
+                    length = max(length, (j - i)+ 1);
+                }
         }
     }
     return length;
@@ -25,4 +25,8 @@ int longestSubArray(int arr[], int n, int key)
 
 int main()
 {
+    int arr[] = {1, 2, 3, 1, 1, 1, 1};
+    int n = 7;
+    int ans = longestSubArray(arr,n,3);
+    cout<<ans;
 }
